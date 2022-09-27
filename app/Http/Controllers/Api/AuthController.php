@@ -13,6 +13,7 @@ use Validator;
 class AuthController extends Controller
 {
 
+    // using response trait for global format of the reponses
     use ApiResponseTrait;
 
     public function login(Request $request)
