@@ -14,11 +14,6 @@ class AuthController extends Controller
 {
 
     use ApiResponseTrait;
-    
-    public function __construct()
-    {
-        $this->middleware('auth:api', ['except' => ['login','register']]);
-    }
 
     public function login(Request $request)
     {

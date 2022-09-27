@@ -26,8 +26,4 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
 });
 
-Route::apiResource('users', UserController::class);
-
-// Route::get('test', function () {
-//     return;
-// })->middleware(['jwt.verify', 'admin']);
+Route::apiResource('users', UserController::class)->middleware(['jwt.verify', 'admin']);

@@ -20,8 +20,6 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // echo JWTAuth::toUser(); die();
-        
-        return (Auth::check() && JWTAuth::toUser()->role->name == 'admin')? abort(401): $next($request);
+        return (Auth::check() && JWTAuth::toUser()->role->name == 'admin')? $next($request): $this->errorResponse('Unauthorized', 401);
     }
 }

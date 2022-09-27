@@ -50,6 +50,10 @@ class Handler extends ExceptionHandler
             return $this->errorResponse($e->getMessage(), 404);
         });
 
+        $this->reportable(function (Illuminate\Database\QueryException $e) {
+            return $this->errorResponse($e->getMessage(), 500);
+        });
+
         $this->renderable(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
             return $this->errorResponse('User not found', 404);
         });
