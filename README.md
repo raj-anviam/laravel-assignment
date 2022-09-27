@@ -3,6 +3,9 @@
 ## Scope
 ### This application has APIs for login and register along with CRUD for register users which is accessible by admin only
 
+## Requirements
+### PHP version 8.0 or above and composer
+
 ## Please run following commands for setup after cloning
 
 ```
