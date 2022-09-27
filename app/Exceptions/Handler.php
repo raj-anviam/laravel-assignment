@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            //
+            return $this->errorResponse($e->getMessage(), 404);
         });
 
         $this->renderable(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
